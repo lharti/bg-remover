@@ -1,0 +1,1 @@
+export { BgRemover } from './BgRemover'
