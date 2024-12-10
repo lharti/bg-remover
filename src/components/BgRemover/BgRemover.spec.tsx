@@ -1,7 +1,6 @@
 import { DropZone } from '@/components/DropZone'
 import { ImagesList } from '@/components/ImagesList'
-import { render } from '@testing-library/react'
-import React, { act } from 'react'
+import { act, render } from '@testing-library/react'
 import { BgRemover } from './BgRemover'
 
 jest.mock('@/components/DropZone')

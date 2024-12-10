@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from '@/utils/cn'
 import React, { useEffect } from 'react'
 
@@ -35,7 +37,6 @@ export const ImagesList: React.FC<ImagesListProps> = ({ files, className }) => {
             )}
         >
             {imagesUrls.map((url, index) => (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img
                     src={url}
                     alt={files[index]?.name}

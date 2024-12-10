@@ -1,5 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
-import React, { act } from 'react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import { DropZone } from './DropZone'
 
 describe('<DropZone />', () => {

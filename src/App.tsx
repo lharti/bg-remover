@@ -1,8 +1,7 @@
 import { BgRemover } from '@/components/BgRemover'
-import React from 'react'
 
-const Home = () => {
+function App() {
     return <BgRemover className="mx-auto mt-20 max-w-screen-lg px-6" />
 }
 
-export default Home
+export default App

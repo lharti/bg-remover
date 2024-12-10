@@ -5,5 +5,17 @@
     "dictionaries": [],
     "ignoreWords": [],
     "import": [],
-    "words": ["classname", "clsx", "Parens", "Sonner", "tabler", "tailwindcss"]
+    "words": [
+        "briaai",
+        "classname",
+        "clsx",
+        "huggingface",
+        "hygen",
+        "Parens",
+        "pretrained",
+        "Rmbg",
+        "Sonner",
+        "tabler",
+        "tailwindcss"
+    ]
 }
