@@ -1,52 +1,84 @@
 'use client'
 
+import { ImageItem, ImageItemStatus } from '@/types/imageItem'
 import { cn } from '@/utils/cn'
-import React, { useEffect } from 'react'
+import { IconLoader2 } from '@tabler/icons-react'
+import React from 'react'
 
 export interface ImagesListProps {
-    files: File[]
+    list: ImageItem[]
+    selectedItemId?: string
+    onItemSelect: (item: ImageItem) => void
+
+    renderAddNewItemBtn?: () => React.ReactNode
+
     className?: string
 }
 
-import { useState } from 'react'
+export const ImagesList: React.FC<ImagesListProps> = ({
+    list,
+    className,
+    onItemSelect,
+    selectedItemId,
 
-export const ImagesList: React.FC<ImagesListProps> = ({ files, className }) => {
-    const [imagesUrls, setObjectUrls] = useState<string[]>([])
-
-    useEffect(() => {
-        const urls = files.map(file => URL.createObjectURL(file))
-
-        setObjectUrls(urls)
-
-        return () => {
-            urls.forEach(url => URL.revokeObjectURL(url))
-        }
-    }, [files])
-
+    renderAddNewItemBtn,
+}) => {
     return (
         <div
             className={cn(
                 `
-                  grid grid-cols-2 gap-2
+                  grid grid-cols-3 place-content-start place-items-center gap-4
+                  px-4
 
-                  lg:grid-cols-6
+                  md:grid-cols-8
 
-                  sm:grid-cols-4
+                  sm:grid-cols-6
+
+                  xs:grid-cols-4
                 `,
+
                 className,
             )}
         >
-            {imagesUrls.map((url, index) => (
-                <img
-                    src={url}
-                    alt={files[index]?.name}
-                    key={`${files[index]?.name}-${index}`}
+            {renderAddNewItemBtn && renderAddNewItemBtn()}
+
+            {list.map(item => (
+                <button
+                    key={item.id}
+                    role="button"
+                    aria-label="Select image"
                     className={`
-                      aspect-square size-full rounded-lg object-cover
+                      relative size-20 overflow-hidden rounded-lg border-2
+
+                      ${
+                          item.id === selectedItemId
+                              ? '!border-blue-500'
+                              : `border-gray-200`
+                      }
 
                       hover:opacity-80
                     `}
-                />
+                    onClick={() => onItemSelect(item)}
+                >
+                    <img
+                        src={item.original}
+                        alt={item.name}
+                        className={`aspect-square size-full object-cover`}
+                    />
+
+                    {item.status === ImageItemStatus.PENDING && (
+                        <div
+                            className={`
+                              absolute inset-0 flex items-center justify-center
+                              bg-black/50
+                            `}
+                        >
+                            <IconLoader2
+                                className={`size-8 animate-spin text-white/50`}
+                            />
+                        </div>
+                    )}
+                </button>
             ))}
         </div>
     )
