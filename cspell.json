@@ -11,11 +11,17 @@
         "clsx",
         "huggingface",
         "hygen",
+        "lharti",
+        "onnx",
         "Parens",
         "pretrained",
         "Rmbg",
+        "snappoints",
         "Sonner",
         "tabler",
-        "tailwindcss"
+        "tailwindcss",
+        "Unthrow",
+        "Unthrowable",
+        "vaul"
     ]
 }
