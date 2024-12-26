@@ -1,0 +1,1 @@
+export { AddNewImagesBtn } from './AddNewImagesBtn'
