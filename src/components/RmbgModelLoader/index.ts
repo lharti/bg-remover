@@ -1,0 +1,1 @@
+export { RmbgModelLoader } from './RmbgModelLoader'
