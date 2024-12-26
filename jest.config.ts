@@ -14,6 +14,8 @@ const config: Config = {
                 useESM: true,
             },
         ],
+
+        '^.+\\.css$': ['jest-transform-css', { modules: true }],
     },
 
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
