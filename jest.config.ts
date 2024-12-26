@@ -16,7 +16,9 @@ const config: Config = {
         ],
     },
 
-    collectCoverageFrom: ['src/**/*.(t|j)s'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+
+    collectCoverageFrom: ['src/**/*.ts(x)?'],
 
     coverageDirectory: '<rootDir>/coverage',
 
@@ -26,7 +28,7 @@ const config: Config = {
 
     roots: ['<rootDir>'],
 
-    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts', 'jest-canvas-mock'],
 
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
