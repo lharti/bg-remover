@@ -1,4 +1,4 @@
-name: Test 
+name: tests
 
 on:
     push:
@@ -18,14 +18,12 @@ jobs:
 
             - name: Install pnpm
               uses: pnpm/action-setup@v4
-              with:
-                version: 9
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                node-version: 22
-                cache: pnpm
+                  node-version: 22
+                  cache: pnpm
 
             - name: Install Dependencies
               run: pnpm install --frozen-lockfile
@@ -36,4 +34,4 @@ jobs:
             - name: Upload coverage reports to Codecov
               uses: codecov/codecov-action@v5
               with:
-                token: ${{ secrets.CODECOV_TOKEN }}
+                  token: ${{ secrets.CODECOV_TOKEN }}
