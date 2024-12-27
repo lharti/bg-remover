@@ -21,35 +21,10 @@ describe('<HomePage />', () => {
             <HomePage onImagesSelect={onImagesSelect} />,
         )
 
-        expect(container).toMatchInlineSnapshot(`
-            <div>
-              <div
-                class="px-4"
-              >
-                <header
-                  class="mt-10 text-center"
-                >
-                  <h1
-                    class="text-4xl font-bold"
-                  >
-                    AI Background Remover
-                  </h1>
-                  <p
-                    class="mt-4 text-lg"
-                  >
-                    Upload your images and remove backgrounds automatically
-                  </p>
-                </header>
-                <div
-                  class="mx-auto mt-20 max-w-xl"
-                  id="DropZoneMock"
-                />
-              </div>
-            </div>
-        `)
+        expect(container).toMatchSnapshot()
     })
 
-    it('should pass images items to onImagesSelect onDrop', () => {
+    it('should pass uploaded images items to onImagesSelect onDrop', () => {
         expect.assertions(2)
 
         const onImagesSelect = jest.fn()
