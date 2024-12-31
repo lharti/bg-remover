@@ -2,20 +2,20 @@ export const ASSETS_CDN = 'https://assets.lharti.com/bg'
 
 export const SAMPLES = [
     {
-        name: 'bird',
-        thumbnail: `${ASSETS_CDN}/upload-examples/bird-sm.jpg`,
-        url: `${ASSETS_CDN}/upload-examples/bird-lg.jpg`,
+        name: 'person',
+        thumbnail: `${ASSETS_CDN}/samples/sm/person.jpg`,
+        url: `${ASSETS_CDN}/samples/lg/person.jpg`,
     },
 
     {
-        name: 'dog',
-        thumbnail: `${ASSETS_CDN}/upload-examples/dog-sm.jpg`,
-        url: `${ASSETS_CDN}/upload-examples/dog-lg.jpg`,
+        name: 'object',
+        thumbnail: `${ASSETS_CDN}/samples/sm/object.jpg`,
+        url: `${ASSETS_CDN}/samples/lg/object.jpg`,
     },
 
     {
-        name: 'fox',
-        thumbnail: `${ASSETS_CDN}/upload-examples/fox-sm.jpg`,
-        url: `${ASSETS_CDN}/upload-examples/fox-lg.jpg`,
+        name: 'animal',
+        thumbnail: `${ASSETS_CDN}/samples/sm/animal.jpg`,
+        url: `${ASSETS_CDN}/samples/lg/animal.jpg`,
     },
 ]
