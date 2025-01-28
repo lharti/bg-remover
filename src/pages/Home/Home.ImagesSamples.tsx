@@ -8,7 +8,7 @@ export const ImagesSamples: React.FC<ImagesSamplesProps> = ({
     onSampleClick: onSampleClick,
 }) => {
     const loadSample = async (url: string) => {
-        const response = await fetch('https://corsproxy.io/?url=' + url)
+        const response = await fetch(url)
         const blob = await response.blob()
 
         const file = new File([blob], 'sample.jpg', {
