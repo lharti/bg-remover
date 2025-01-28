@@ -9,22 +9,13 @@ export interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onImagesSelect }) => {
-    const onFilesUpload = (files: File[]) => {
+    const addItemsFromFiles = (files: File[]) => {
         const imageItems = generateImagesItemsFromFiles(files)
 
         onImagesSelect(imageItems)
     }
 
-    const onSampleClick = async (url: string) => {
-        const response = await fetch(url)
-        const blob = await response.blob()
-
-        const file = new File([blob], 'sample.jpg', {
-            type: 'image/jpeg',
-        })
-
-        onFilesUpload([file])
-    }
+    const onSampleClick = (file: File) => addItemsFromFiles([file])
 
     return (
         <div
@@ -41,7 +32,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onImagesSelect }) => {
                 </p>
             </header>
 
-            <DropZone className="w-full py-10" onDrop={onFilesUpload} />
+            <DropZone className="w-full py-10" onDrop={addItemsFromFiles} />
 
             <ImagesSamples onSampleClick={onSampleClick} />
         </div>
